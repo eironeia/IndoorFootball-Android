@@ -13,28 +13,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Team"
-        android:id="@+id/addButton"
+        android:id="@+id/addTeam"
         android:onClick="onClick"
-        android:layout_marginTop="83dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Player"
-        android:id="@+id/button2"
+        android:id="@+id/addPlayer"
         android:onClick="onClick"
-        android:layout_below="@+id/addButton"
-        android:layout_alignStart="@+id/addButton" />
+        android:layout_below="@+id/addTeam"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
+        android:id="@+id/continueLeague"
         android:onClick="onClick"
-        android:layout_below="@+id/button2"
+        android:text="Continue League"
+        android:layout_below="@+id/addPlayer"
+        android:layout_alignStart="@+id/removePlayer" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startLeague"
+        android:onClick="onClick"
+        android:text="Start League"
+        android:layout_below="@+id/continueLeague"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove team"
+        android:id="@+id/removeTeam"
+        android:onClick="onClick"
+        android:layout_below="@+id/startLeague"
+        android:layout_alignEnd="@+id/addPlayer" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Player"
+        android:id="@+id/removePlayer"
+        android:onClick="onClick"
+        android:layout_below="@+id/removeTeam"
+        android:layout_alignEnd="@+id/removeTeam" />
 
 
 </RelativeLayout>
