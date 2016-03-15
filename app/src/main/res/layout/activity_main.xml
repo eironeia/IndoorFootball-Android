@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Add Team"
         android:id="@+id/addTeam"
-        android:onClick="onClick"
+        android:onClick="onAddTeam"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Add Player"
         android:id="@+id/addPlayer"
-        android:onClick="onClick"
+        android:onClick="onAddPlayer"
         android:layout_below="@+id/addTeam"
         android:layout_centerHorizontal="true" />
 
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/continueLeague"
-        android:onClick="onClick"
+        android:onClick="onContinueGame"
         android:text="Continue League"
         android:layout_below="@+id/addPlayer"
         android:layout_alignStart="@+id/removePlayer" />
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/startLeague"
-        android:onClick="onClick"
+        android:onClick="onStartGame"
         android:text="Start League"
         android:layout_below="@+id/continueLeague"
         android:layout_centerHorizontal="true" />
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Remove team"
         android:id="@+id/removeTeam"
-        android:onClick="onClick"
+        android:onClick="onRemoveTeam"
         android:layout_below="@+id/startLeague"
         android:layout_alignEnd="@+id/addPlayer" />
 
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:text="Remove Player"
         android:id="@+id/removePlayer"
-        android:onClick="onClick"
+        android:onClick="onRemovePlayer"
         android:layout_below="@+id/removeTeam"
         android:layout_alignEnd="@+id/removeTeam" />
 

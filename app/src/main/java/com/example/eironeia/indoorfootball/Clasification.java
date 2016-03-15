@@ -12,6 +12,7 @@ public class Clasification extends SugarRecord<Clasification>{
 
     ArrayList<Team> teams;
     long jornada;
+    // PJ PE PP GL EQUIPO JORNADA
 
 
     public Clasification(){
