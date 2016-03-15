@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.orm.SugarRecord;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Eironeia on 13/3/16.
@@ -14,7 +15,7 @@ public class Team  extends SugarRecord <Team>{
 
     String name;
     String city;
-    ArrayList<Player> players;
+    List<Player> players;
     long goals;
     long victories;
     long defeats;
@@ -26,7 +27,7 @@ public class Team  extends SugarRecord <Team>{
 
     }
 
-    public Team(String name, String city, ArrayList<Player> players, long goals, long victories, long defeats, long draws, long score) {
+    public Team(String name, String city, List<Player> players, long goals, long victories, long defeats, long draws, long score) {
         this.name = name;
         this.city = city;
         this.players = players;
@@ -53,11 +54,11 @@ public class Team  extends SugarRecord <Team>{
         this.city = city;
     }
 
-    public ArrayList<Player> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 
@@ -99,11 +100,5 @@ public class Team  extends SugarRecord <Team>{
 
     public void setScore(long score) {
         this.score = score;
-    }
-
-    /* Functions */
-
-    public void addPlayers(Player player){
-        this.players.add(player);
     }
 }

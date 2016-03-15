@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/nameTeam"
         android:layout_gravity="center_horizontal"
-        android:text="Name"
         android:textAlignment="center" />
 
     <EditText
@@ -17,15 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/cityTeam"
         android:layout_gravity="center_horizontal"
-        android:text="City"
         android:textAlignment="center" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/playetsOfTeam"
-        android:layout_gravity="center_horizontal"
-        android:spinnerMode="dialog" />
 
     <ListView
         android:layout_width="match_parent"
@@ -38,5 +29,6 @@
         android:layout_height="wrap_content"
         android:text="Add Team"
         android:id="@+id/addTeam"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="onAddTeam" />
 </LinearLayout>
