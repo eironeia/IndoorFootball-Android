@@ -3,29 +3,30 @@ package com.example.eironeia.indoorfootball;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.orm.SugarRecord;
+
 import java.util.ArrayList;
 
 /**
  * Created by Eironeia on 13/3/16.
  */
-public class Team {
+public class Team  extends SugarRecord <Team>{
 
     String name;
     String city;
     ArrayList<Player> players;
-    int goals;
-    int victories;
-    int defeats;
-    int draws;
-    int score;
+    long goals;
+    long victories;
+    long defeats;
+    long draws;
+    long score;
 
 
     public Team(){
 
     }
 
-    public Team (String name, String city, ArrayList<Player> players,
-                 int goals, int victories, int defeats, int draws, int score){
+    public Team(String name, String city, ArrayList<Player> players, long goals, long victories, long defeats, long draws, long score) {
         this.name = name;
         this.city = city;
         this.players = players;
@@ -60,43 +61,49 @@ public class Team {
         this.players = players;
     }
 
-    public int getGoals() {
+    public long getGoals() {
         return goals;
     }
 
-    public void setGoals(int goals) {
+    public void setGoals(long goals) {
         this.goals = goals;
     }
 
-    public int getVictories() {
+    public long getVictories() {
         return victories;
     }
 
-    public void setVictories(int victories) {
+    public void setVictories(long victories) {
         this.victories = victories;
     }
 
-    public int getDefeats() {
+    public long getDefeats() {
         return defeats;
     }
 
-    public void setDefeats(int defeats) {
+    public void setDefeats(long defeats) {
         this.defeats = defeats;
     }
 
-    public int getDraws() {
+    public long getDraws() {
         return draws;
     }
 
-    public void setDraws(int draws) {
+    public void setDraws(long draws) {
         this.draws = draws;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(long score) {
         this.score = score;
+    }
+
+    /* Functions */
+
+    public void addPlayers(Player player){
+        this.players.add(player);
     }
 }

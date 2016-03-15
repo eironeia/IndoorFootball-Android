@@ -8,10 +8,10 @@ import java.util.ArrayList;
 /**
  * Created by Eironeia on 13/3/16.
  */
-public class Clasification extends SugarRecord {
+public class Clasification extends SugarRecord<Clasification>{
 
     ArrayList<Team> teams;
-    int jornada;
+    long jornada;
 
 
     public Clasification(){
@@ -19,7 +19,7 @@ public class Clasification extends SugarRecord {
 
     }
 
-    public Clasification(ArrayList<Team> teams, int jornada) {
+    public Clasification(ArrayList<Team> teams, long jornada) {
         this.teams = teams;
         this.jornada = jornada;
     }
@@ -34,15 +34,16 @@ public class Clasification extends SugarRecord {
         this.teams = teams;
     }
 
-    public int getJornada() {
+    public Long getJornada() {
         return jornada;
     }
 
-    public void setJornada(int jornada) {
+    public void setJornada(long jornada) {
         this.jornada = jornada;
     }
 
     /* Functions */
+
 
 
 }

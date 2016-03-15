@@ -1,18 +1,20 @@
 package com.example.eironeia.indoorfootball;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by Eironeia on 13/3/16.
  */
-public class Player {
-    int id = 0;
+public class Player extends SugarRecord <Player>{
+    long id = 0;
     String name;
-    int goals;
-    int idTeam;
+    long goals;
+    long idTeam;
 
     public Player() {
     }
 
-    public Player(String name, int goals, int idTeam){
+    public Player(String name, long goals, long idTeam){
         this.name = name;
         this.goals = goals;
         this.idTeam = idTeam;
@@ -20,11 +22,11 @@ public class Player {
 
     /* Getters and setters */
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -36,25 +38,25 @@ public class Player {
         this.name = name;
     }
 
-    public int getGoals() {
+    public Long getGoals() {
         return goals;
     }
 
-    public void setGoals(int goals) {
+    public void setGoals(long goals) {
         this.goals = goals;
     }
 
-    public int getIdTeam() {
+    public Long getIdTeam() {
         return idTeam;
     }
 
-    public void setIdTeam(int idTeam) {
+    public void setIdTeam(long idTeam) {
         this.idTeam = idTeam;
     }
 
     /* Funcionts */
 
-    public void incGoals(int goals){
+    public void incGoals(long goals){
         this.goals += goals;
     }
 
