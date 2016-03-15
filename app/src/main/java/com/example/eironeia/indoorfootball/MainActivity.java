@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Team.findWithQuery(Team.class, "delete from team");
+
         /*
         Player player = new Player("Messi",24, 2);
         player.save();
