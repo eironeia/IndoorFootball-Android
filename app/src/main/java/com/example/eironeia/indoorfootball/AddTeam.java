@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class AddTeam extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_team);
+
+        populateTeamList();
     }
 
     public void onAddTeam(View view) {
@@ -36,6 +39,20 @@ public class AddTeam extends Activity {
             team.save();
         }
     }
+
+
+    private void populateTeamList() {
+        // Construct the data source
+        Team team;
+        List<Team> arrayOfTeams = Team.listAll(Team.class);
+
+        // Create the adapter to convert the array to views
+        CustomListTeam adapter = new CustomListTeam(this, arrayOfTeams);
+        // Attach the adapter to a ListView
+        ListView listView = (ListView) findViewById(R.id.listOfTeams);
+        listView.setAdapter(adapter);
+    }
+
 
     private void openDialogAlreadyExists(){
         new AlertDialog.Builder(this)
