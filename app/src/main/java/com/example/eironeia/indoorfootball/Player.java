@@ -6,29 +6,23 @@ import com.orm.SugarRecord;
  * Created by Eironeia on 13/3/16.
  */
 public class Player extends SugarRecord <Player>{
-    long id = 0;
-    String name;
-    long goals;
-    long idTeam;
+    private String name;
+    private String team;
+    private long goals;
 
     public Player() {
+        this.name = "";
+        this.team = "";
+        this.goals = 0;
     }
 
-    public Player(String name, long goals, long idTeam){
+    public Player(String name, String team, long goals){
         this.name = name;
+        this.team = team;
         this.goals = goals;
-        this.idTeam = idTeam;
     }
 
     /* Getters and setters */
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -46,12 +40,12 @@ public class Player extends SugarRecord <Player>{
         this.goals = goals;
     }
 
-    public Long getIdTeam() {
-        return idTeam;
+    public String getTeam() {
+        return team;
     }
 
-    public void setIdTeam(long idTeam) {
-        this.idTeam = idTeam;
+    public void setTeam(String team) {
+        this.team = team;
     }
 
     /* Funcionts */

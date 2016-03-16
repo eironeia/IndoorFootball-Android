@@ -11,10 +11,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.orm.query.Condition;
-import com.orm.query.Select;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,52 +26,16 @@ public class AddPlayer extends Activity {
         setContentView(R.layout.add_player);
 
         /* Preparing the spinner of the Teams */
-        /*List<Team> l = Team.findWithQuery(Team.class, "Select name from team ");
-        if (l.size() != 10) { // s'ha de modificar a != 10
-            openDialogTeams();
-        }
-        else {
-            Spinner spinner = (Spinner)findViewById(R.id.listOfTeams);
-            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
-            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(spinnerAdapter);
-            for (int i = 0; i < l.size() ; ++i) {
-                spinnerAdapter.add((l.get(i)).getName());
-            }
-            spinnerAdapter.notifyDataSetChanged();
-        }*/
-
-
-
-        /* */
+        uploadTeamsOnSpinner();
+        uploadListPlayers();
     }
 
 
 
     public void onAddPlayer(View view){
-        /*EditText namePlayer = (EditText) findViewById(R.id.playerName);
-        Spinner spinner = (Spinner)findViewById(R.id.listOfTeams);
-        String s = spinner.getSelectedItem().toString();
-        if (namePlayer.toString().isEmpty() || s.isEmpty()){
-            openDialogMissInfo();
-        }
-        else{
-
-            List<Team> l = Team.findWithQuery(Team.class, "Select players from team where name = ?",s);
-
-            if (l.size() > 0) {
-                Toast.makeText(this,Integer.toString(l.size()),Toast.LENGTH_LONG).show();
-
-            }
-            else{
-                Toast.makeText(this,"9999",Toast.LENGTH_LONG).show();
-
-            }
-        }*/
-
-
 
     }
+
 
     /* Go to addTeam because we don't have enough teams */
     private void openDialogTeams(){
@@ -118,5 +78,35 @@ public class AddPlayer extends Activity {
                 .show();
     }
 
+    private void uploadTeamsOnSpinner(){
+        List<Team> l = Team.findWithQuery(Team.class, "Select name from team");
+
+        Spinner spinner = (Spinner)findViewById(R.id.listOfTeams);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        for (int i = 0; i < l.size() ; ++i) {
+            spinnerAdapter.add((l.get(i)).getName());
+        }
+        spinnerAdapter.notifyDataSetChanged();
+    }
+    private void uploadListPlayers(){
+       /* List<Team> l = Team.findWithQuery(Team.class, "Select name from team");
+
+        Spinner spinner = (Spinner)findViewById(R.id.listOfTeams);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, android.R.id.text1);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        for (int i = 0; i < l.size() ; ++i) {
+            spinnerAdapter.add((l.get(i)).getName());
+        }
+        spinnerAdapter.notifyDataSetChanged();*/
+    }
+    private Boolean existsPlayer(String s){
+        List<Player> listP = Player.findWithQuery(Player.class,"Select name FROM player where name = ?", s);
+        if (listP.size() > 0) { openDialogAlreadyExistsPlayer(); return true;}
+        else return false;
+
+    }
 
 }

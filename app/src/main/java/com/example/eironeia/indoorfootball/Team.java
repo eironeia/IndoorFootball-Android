@@ -13,24 +13,29 @@ import java.util.List;
  */
 public class Team  extends SugarRecord <Team>{
 
-    String name;
-    String city;
-    List<Player> players;
-    long goals;
-    long victories;
-    long defeats;
-    long draws;
-    long score;
+    private String name;
+    private String city;
+    private long goals;
+    private long victories;
+    private long defeats;
+    private long draws;
+    private long score;
 
 
     public Team(){
+        this.name = "";
+        this.city = "";
+        this.goals = 0;
+        this.victories = 0;
+        this.defeats = 0;
+        this.draws = 0;
+        this.score = 0;
 
     }
 
-    public Team(String name, String city, List<Player> players, long goals, long victories, long defeats, long draws, long score) {
+    public Team(String name, String city, long goals, long victories, long defeats, long draws, long score) {
         this.name = name;
         this.city = city;
-        this.players = players;
         this.goals = goals;
         this.victories = victories;
         this.defeats = defeats;
@@ -52,14 +57,6 @@ public class Team  extends SugarRecord <Team>{
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public List<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(List<Player> players) {
-        this.players = players;
     }
 
     public long getGoals() {
@@ -101,4 +98,5 @@ public class Team  extends SugarRecord <Team>{
     public void setScore(long score) {
         this.score = score;
     }
+
 }

@@ -34,11 +34,13 @@ public class AddTeam extends Activity {
         else if (teams.size() > 0) openDialogAlreadyExists();
         else if (t.size() >= 10) openDialogTenTeams();
         else {
-            ArrayList<Player> players = new ArrayList<Player>();
-            Team team = new Team(nameOfTeam.getText().toString(),nameOfCity.getText().toString(),players,0,0,0,0,0);
+            Team team = new Team();
+            team.setName(nameOfTeam.getText().toString());
+            team.setCity(nameOfCity.getText().toString());
             team.save();
             Toast.makeText(this,"Team " + nameOfTeam.getText().toString()+ " added",Toast.LENGTH_SHORT).show();
             populateTeamList();
+            cleanFields();
         }
     }
 
@@ -51,6 +53,13 @@ public class AddTeam extends Activity {
         // Attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.listOfTeams);
         listView.setAdapter(adapter);
+    }
+
+    private void cleanFields(){
+        EditText nameOfTeam = (EditText) findViewById(R.id.nameTeam);
+        EditText nameOfCity = (EditText) findViewById(R.id.cityTeam);
+        nameOfCity.setText("");
+        nameOfTeam.setText("");
     }
 
 
@@ -87,4 +96,5 @@ public class AddTeam extends Activity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
+
 }
