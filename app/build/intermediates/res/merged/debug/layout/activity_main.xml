@@ -64,5 +64,14 @@
         android:layout_below="@+id/removeTeam"
         android:layout_alignEnd="@+id/removeTeam" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove All"
+        android:id="@+id/removeAll"
+        android:layout_below="@+id/removePlayer"
+        android:layout_centerHorizontal="true"
+        android:onClick="onDeleteAll" />
+
 
 </RelativeLayout>

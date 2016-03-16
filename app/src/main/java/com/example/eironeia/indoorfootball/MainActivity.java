@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onDeleteAll (View view){
+        Team.deleteAll(Team.class);
+        Player.deleteAll(Player.class);
+    }
+
 
 
 
