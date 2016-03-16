@@ -30,20 +30,20 @@ public class AddTeam extends Activity {
         EditText nameOfCity = (EditText) findViewById(R.id.cityTeam);
         List<Team> teams = Team.find(Team.class, "name = ?", nameOfTeam.getText().toString());
         List<Team> t = Team.findWithQuery(Team.class, "Select * from team");
-
-        if (teams.size() > 0) openDialogAlreadyExists();
+        if (nameOfCity.getText().toString().isEmpty() || nameOfTeam.getText().toString().isEmpty()) openDialogEmptyFields();
+        else if (teams.size() > 0) openDialogAlreadyExists();
         else if (t.size() >= 10) openDialogTenTeams();
         else {
             ArrayList<Player> players = new ArrayList<Player>();
             Team team = new Team(nameOfTeam.getText().toString(),nameOfCity.getText().toString(),players,0,0,0,0,0);
             team.save();
+            Toast.makeText(this,"Team " + nameOfTeam.getText().toString()+ " added",Toast.LENGTH_SHORT).show();
+            populateTeamList();
         }
     }
 
-
     private void populateTeamList() {
         // Construct the data source
-        Team team;
         List<Team> arrayOfTeams = Team.listAll(Team.class);
 
         // Create the adapter to convert the array to views
@@ -70,6 +70,17 @@ public class AddTeam extends Activity {
                 .setTitle("Maximum Teams")
                 .setMessage("The maximum teams you can have is 10")
                 .setNeutralButton("Okay", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+    private void openDialogEmptyFields(){
+        new AlertDialog.Builder(this)
+                .setTitle("Empty Fields")
+                .setMessage("You must have to complete all the fields")
+                .setNeutralButton("Okay, I understand", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 })
