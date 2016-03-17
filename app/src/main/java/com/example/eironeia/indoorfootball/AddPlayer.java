@@ -29,9 +29,22 @@ public class AddPlayer extends Activity {
 
         /* Preparing the spinner of the Teams */
         //if (notEnoughTeams()) openDialogTeams();
+        final Spinner spinner = (Spinner) findViewById(R.id.listOfTeams);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                uploadListPlayers(spinner.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
         //else {
             uploadTeamsOnSpinner();
-            uploadListPlayers();
         //}
 
     }
@@ -51,7 +64,7 @@ public class AddPlayer extends Activity {
             player2.setTeam(listTeamValue);
             player2.save();
             Toast.makeText(this,"Player " + nameValue+ " added",Toast.LENGTH_SHORT).show();
-            uploadListPlayers();
+            uploadListPlayers(listTeamValue);
         }
 
     }
@@ -127,9 +140,9 @@ public class AddPlayer extends Activity {
         }
         spinnerAdapter.notifyDataSetChanged();
     }
-    private void uploadListPlayers(){
+    private void uploadListPlayers(String teamPlayers){
         // Construct the data source
-        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player ORDER BY team");
+        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player WHERE team = ?",teamPlayers);
 
         // Create the adapter to convert the array to views
         CustomListPlayer adapter = new CustomListPlayer(this, arrayOfPlayer);
