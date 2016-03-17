@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAutoComplete(View view){
         addSampleDB();
+        Toast.makeText(this,"#Equips: "+Team.listAll(Team.class).size()+"\n#Jugadors: "+ Player.listAll(Player.class).size(),Toast.LENGTH_LONG).show();
     }
 
     public Boolean emptyDB(){
@@ -87,17 +89,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void addSampleDB(){
         for (int i = 1; i <= 10; ++i){
+            String playerTeam = new String();
             for (int j = 1; j <= 12; ++j){
                 int posFix = i*12+j;
                 String playerName = "player"+posFix;
-                String playerTeam = "Team"+i;
+                playerTeam = "Team"+i;
                 Player player = new Player(playerName,playerTeam,0);
                 player.save();
-                Team team = new Team();
-                team.setName(playerTeam);
-                team.setCity("BCN");
-                team.save();
             }
+            Team team = new Team();
+            team.setName(playerTeam);
+            team.setCity("BCN");
+            team.save();
         }
     }
 
