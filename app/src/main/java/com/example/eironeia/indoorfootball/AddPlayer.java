@@ -50,6 +50,7 @@ public class AddPlayer extends Activity {
             player2.setName(nameValue);
             player2.setTeam(listTeamValue);
             player2.save();
+            Toast.makeText(this,"Player " + nameValue+ " added",Toast.LENGTH_SHORT).show();
             uploadListPlayers();
         }
 
@@ -128,7 +129,7 @@ public class AddPlayer extends Activity {
     }
     private void uploadListPlayers(){
         // Construct the data source
-        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player");
+        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player ORDER BY team");
 
         // Create the adapter to convert the array to views
         CustomListPlayer adapter = new CustomListPlayer(this, arrayOfPlayer);
