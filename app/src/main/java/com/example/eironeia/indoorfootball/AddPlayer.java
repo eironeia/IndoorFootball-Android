@@ -28,11 +28,11 @@ public class AddPlayer extends Activity {
         setContentView(R.layout.add_player);
 
         /* Preparing the spinner of the Teams */
-        if (notEnoughTeams()) openDialogTeams();
-        else {
+        //if (notEnoughTeams()) openDialogTeams();
+        //else {
             uploadTeamsOnSpinner();
             uploadListPlayers();
-        }
+        //}
 
     }
 
@@ -48,7 +48,7 @@ public class AddPlayer extends Activity {
             Player player2 = new Player();
             player2.setGoals(0);
             player2.setName(nameValue);
-            player2.setteamPlayer(listTeamValue);
+            player2.setTeam(listTeamValue);
             player2.save();
             uploadListPlayers();
         }
@@ -114,7 +114,7 @@ public class AddPlayer extends Activity {
     }
 
 
-    private void uploadTeamsOnSpinner(){ /* Agafar nomes els equips del nom del spinner  -> CAL FER-HO!!!!!!!!*/
+    private void uploadTeamsOnSpinner(){
         List<Team> l = Team.findWithQuery(Team.class, "Select * from team");
 
         Spinner spinner = (Spinner)findViewById(R.id.listOfTeams);
@@ -145,7 +145,7 @@ public class AddPlayer extends Activity {
 
     }
     private Boolean fullTeam(String nameOfTeam){
-        List<Player> playerL = Player.findWithQuery(Player.class,"SELECT * FROM player WHERE teamPlayer = ?", nameOfTeam);
+        List<Player> playerL = Player.findWithQuery(Player.class,"SELECT * FROM player WHERE team = ?", nameOfTeam);
         if (playerL.size() >= 10) return true;
         return false;
     }

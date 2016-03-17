@@ -7,18 +7,18 @@ import com.orm.SugarRecord;
  */
 public class Player extends SugarRecord <Player>{
     private String name;
-    private String teamPlayer;
+    private String team;
     private long goals;
 
     public Player() {
         this.name = "noName";
-        this.teamPlayer = "noName";
+        this.team = "noName";
         this.goals = 0;
     }
 
-    public Player(String name, String teamPlayer, long goals){
+    public Player(String name, String team, long goals){
         this.name = name;
-        this.teamPlayer = teamPlayer;
+        this.team = team;
         this.goals = goals;
     }
 
@@ -40,15 +40,15 @@ public class Player extends SugarRecord <Player>{
         this.goals = goals;
     }
 
-    public String getteamPlayer() {
-        return teamPlayer;
+    public String getTeam() {
+        return team;
     }
 
-    public void setteamPlayer(String teamPlayer) {
-        this.teamPlayer = teamPlayer;
+    public void setTeam(String team) {
+        this.team = team;
     }
 
-    /* Funcionts */
+/* Funcionts */
 
     public void incGoals(long goals){
         this.goals += goals;

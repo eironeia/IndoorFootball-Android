@@ -27,7 +27,7 @@ public class CustomListPlayer extends ArrayAdapter<Player> {
         TextView teamPlayer = (TextView) convertView.findViewById(R.id.nameTeam);
         // Populate the data into the template view using the data object
         namePlayer.setText(player.getName());
-        teamPlayer.setText(player.getteamPlayer());
+        teamPlayer.setText(player.getTeam());
         // Return the completed view to render on screen
         return convertView;
     }
