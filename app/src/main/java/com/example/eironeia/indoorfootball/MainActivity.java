@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (emptyDB()) addSampleDB();
         //Team.findWithQuery(Team.class, "delete from team");
 
         /*
@@ -71,6 +72,33 @@ public class MainActivity extends AppCompatActivity {
     public void onDeleteAll (View view){
         Team.deleteAll(Team.class);
         Player.deleteAll(Player.class);
+    }
+
+    public void onAutoComplete(View view){
+        addSampleDB();
+    }
+
+    public Boolean emptyDB(){
+        List<Player> players = Player.listAll(Player.class);
+        List<Team> teams = Team.listAll(Team.class);
+        if (players.size() == 0 && teams.size() == 0) return true;
+        return false;
+    }
+
+    public void addSampleDB(){
+        for (int i = 1; i <= 10; ++i){
+            for (int j = 1; j <= 12; ++j){
+                int posFix = i*12+j;
+                String playerName = "player"+posFix;
+                String playerTeam = "Team"+i;
+                Player player = new Player(playerName,playerTeam,0);
+                player.save();
+                Team team = new Team();
+                team.setName(playerTeam);
+                team.setCity("BCN");
+                team.save();
+            }
+        }
     }
 
 

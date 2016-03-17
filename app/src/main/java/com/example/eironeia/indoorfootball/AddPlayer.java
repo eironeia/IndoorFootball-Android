@@ -147,7 +147,7 @@ public class AddPlayer extends Activity {
     }
     private Boolean fullTeam(String nameOfTeam){
         List<Player> playerL = Player.findWithQuery(Player.class,"SELECT * FROM player WHERE team = ?", nameOfTeam);
-        if (playerL.size() >= 10) return true;
+        if (playerL.size() >= 12) return true;
         return false;
     }
 

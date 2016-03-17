@@ -73,5 +73,14 @@
         android:layout_centerHorizontal="true"
         android:onClick="onDeleteAll" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="autoComplete"
+        android:id="@+id/autoComplete"
+        android:layout_below="@+id/removeAll"
+        android:layout_centerHorizontal="true"
+        android:onClick="onAutoComplete" />
+
 
 </RelativeLayout>
