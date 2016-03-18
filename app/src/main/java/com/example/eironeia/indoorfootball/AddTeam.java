@@ -43,7 +43,6 @@ public class AddTeam extends Activity {
             cleanFields();
         }
     }
-
     private void populateTeamList() {
         // Construct the data source
         List<Team> arrayOfTeams = Team.listAll(Team.class);
@@ -54,7 +53,6 @@ public class AddTeam extends Activity {
         ListView listView = (ListView) findViewById(R.id.listOfTeams);
         listView.setAdapter(adapter);
     }
-
     private void cleanFields(){
         EditText nameOfTeam = (EditText) findViewById(R.id.nameTeam);
         EditText nameOfCity = (EditText) findViewById(R.id.cityTeam);

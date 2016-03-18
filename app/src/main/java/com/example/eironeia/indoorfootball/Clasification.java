@@ -10,41 +10,65 @@ import java.util.ArrayList;
  */
 public class Clasification extends SugarRecord<Clasification>{
 
-    ArrayList<Team> teams;
-    long jornada;
-    // PJ PE PP GL EQUIPO JORNADA
-
+    private String nameTeam;
+    private long pointsTeam;
+    private long wonMatches;
+    private long tiedMatches;
+    private long lostMatches;
 
     public Clasification(){
-        jornada = 0;
-
+        this.nameTeam = "";
+        this.pointsTeam = 0;
+        this.wonMatches = 0;
+        this.tiedMatches = 0;
+        this.lostMatches = 0;
     }
 
-    public Clasification(ArrayList<Team> teams, long jornada) {
-        this.teams = teams;
-        this.jornada = jornada;
+    public Clasification(String nameTeam, long pointsTeam, long wonMatches, long tiedMatches, long lostMatches) {
+        this.nameTeam = nameTeam;
+        this.pointsTeam = pointsTeam;
+        this.wonMatches = wonMatches;
+        this.tiedMatches = tiedMatches;
+        this.lostMatches = lostMatches;
     }
 
- /* Getter and setters */
-
-    public ArrayList<Team> getTeams() {
-        return teams;
+    public String getNameTeam() {
+        return nameTeam;
     }
 
-    public void setTeams(ArrayList<Team> teams) {
-        this.teams = teams;
+    public void setNameTeam(String nameTeam) {
+        this.nameTeam = nameTeam;
     }
 
-    public Long getJornada() {
-        return jornada;
+    public long getPointsTeam() {
+        return pointsTeam;
     }
 
-    public void setJornada(long jornada) {
-        this.jornada = jornada;
+    public void setPointsTeam(long pointsTeam) {
+        this.pointsTeam = pointsTeam;
     }
 
-    /* Functions */
+    public long getWonMatches() {
+        return wonMatches;
+    }
 
+    public void setWonMatches(long wonMatches) {
+        this.wonMatches = wonMatches;
+    }
 
+    public long getTiedMatches() {
+        return tiedMatches;
+    }
 
+    public void setTiedMatches(long tiedMatches) {
+        this.tiedMatches = tiedMatches;
+    }
+
+    public long getLostMatches() {
+        return lostMatches;
+    }
+
+    public void setLostMatches(long lostMatches) {
+        this.lostMatches = lostMatches;
+    }
 }

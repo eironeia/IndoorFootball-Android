@@ -20,6 +20,11 @@
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown" />
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="346dp"
+        android:id="@+id/listOfPlayers" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,9 +32,4 @@
         android:id="@+id/addPlayer"
         android:layout_gravity="center_horizontal"
         android:onClick="onAddPlayer" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listOfPlayers" />
 </LinearLayout>

@@ -40,20 +40,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/startLeague"
-        android:onClick="onStartGame"
-        android:text="Start League"
-        android:layout_below="@+id/continueLeague"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Remove team"
         android:id="@+id/removeTeam"
         android:onClick="onRemoveTeam"
-        android:layout_below="@+id/startLeague"
-        android:layout_alignEnd="@+id/addPlayer" />
+        android:layout_alignEnd="@+id/addPlayer"
+        android:layout_below="@+id/continueLeague" />
 
     <Button
         android:layout_width="wrap_content"

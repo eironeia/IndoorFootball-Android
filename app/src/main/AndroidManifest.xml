@@ -21,7 +21,7 @@
         <activity android:name=".AddTeam"></activity>
         <activity android:name=".RemovePlayer"></activity>
         <activity android:name=".RemoveTeam"></activity>
-        <activity android:name=".Gaming"></activity>
+        <activity android:name=".ClasificationActivity"></activity>
         <activity android:name=".AddFootballGame"></activity>
         <meta-data
             android:name="DATABASE"
