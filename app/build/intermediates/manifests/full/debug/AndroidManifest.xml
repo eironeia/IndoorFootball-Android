@@ -27,7 +27,7 @@
         <activity android:name="com.example.eironeia.indoorfootball.AddTeam" />
         <activity android:name="com.example.eironeia.indoorfootball.RemovePlayer" />
         <activity android:name="com.example.eironeia.indoorfootball.RemoveTeam" />
-        <activity android:name="com.example.eironeia.indoorfootball.Gaming" />
+        <activity android:name="com.example.eironeia.indoorfootball.ClasificationActivity" />
         <activity android:name="com.example.eironeia.indoorfootball.AddFootballGame" />
 
         <meta-data

@@ -60,10 +60,10 @@ activity#com.example.eironeia.indoorfootball.RemoveTeam
 ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:23:9-57
 	android:name
 		ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:23:19-45
-activity#com.example.eironeia.indoorfootball.Gaming
-ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:24:9-53
+activity#com.example.eironeia.indoorfootball.ClasificationActivity
+ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:24:9-68
 	android:name
-		ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:24:19-41
+		ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:24:19-56
 activity#com.example.eironeia.indoorfootball.AddFootballGame
 ADDED from /Users/Eironeia/Documents/Universitat/IDI/App/indoorFootball/app/src/main/AndroidManifest.xml:25:9-62
 	android:name
