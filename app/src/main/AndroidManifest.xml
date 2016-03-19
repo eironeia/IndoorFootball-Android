@@ -23,6 +23,7 @@
         <activity android:name=".RemoveTeam"></activity>
         <activity android:name=".ClasificationActivity"></activity>
         <activity android:name=".AddFootballGame"></activity>
+        <activity android:name=".DescendTeam"></activity>
         <meta-data
             android:name="DATABASE"
             android:value="indoorFootball.db" />

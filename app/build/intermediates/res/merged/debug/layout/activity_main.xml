@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Team"
+        android:text="Teams"
         android:id="@+id/addTeam"
         android:onClick="onAddTeam"
         android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Player"
+        android:text="Players"
         android:id="@+id/addPlayer"
         android:onClick="onAddPlayer"
         android:layout_below="@+id/addTeam"
@@ -33,18 +33,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/continueLeague"
         android:onClick="onContinueGame"
-        android:text="Continue League"
+        android:text="League"
         android:layout_below="@+id/addPlayer"
-        android:layout_alignStart="@+id/removePlayer" />
+        android:layout_alignStart="@+id/addPlayer" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remove team"
+        android:text="Change Division"
         android:id="@+id/removeTeam"
         android:onClick="onRemoveTeam"
-        android:layout_alignEnd="@+id/addPlayer"
-        android:layout_below="@+id/continueLeague" />
+        android:layout_below="@+id/continueLeague"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -72,6 +72,7 @@
         android:layout_below="@+id/removeAll"
         android:layout_centerHorizontal="true"
         android:onClick="onAutoComplete" />
+
 
 
 </RelativeLayout>

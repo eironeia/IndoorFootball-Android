@@ -3,6 +3,7 @@ package com.example.eironeia.indoorfootball;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -43,9 +44,13 @@ public class AddTeam extends Activity {
             cleanFields();
         }
     }
+    public void onDescendTeam(View view){
+        Intent myIntent = new Intent(this, DescendTeam.class);
+        this.startActivity(myIntent);
+    }
     private void populateTeamList() {
         // Construct the data source
-        List<Team> arrayOfTeams = Team.listAll(Team.class);
+        List<Team> arrayOfTeams = Team.findWithQuery(Team.class, "Select * from team ORDER BY name");
 
         // Create the adapter to convert the array to views
         CustomListTeam adapter = new CustomListTeam(this, arrayOfTeams);

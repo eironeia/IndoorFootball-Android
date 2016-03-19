@@ -142,7 +142,7 @@ public class AddPlayer extends Activity {
     }
     private void uploadListPlayers(String teamPlayers){
         // Construct the data source
-        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player WHERE team = ?",teamPlayers);
+        List<Player> arrayOfPlayer = Player.findWithQuery(Player.class, "Select * from player WHERE team = ? ORDER BY name",teamPlayers);
 
         // Create the adapter to convert the array to views
         CustomListPlayer adapter = new CustomListPlayer(this, arrayOfPlayer);
