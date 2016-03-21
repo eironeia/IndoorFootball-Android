@@ -48,6 +48,10 @@ public class AddTeam extends Activity {
         Intent myIntent = new Intent(this, DescendTeam.class);
         this.startActivity(myIntent);
     }
+
+    public void onRefreshTeams(View view){
+        populateTeamList();
+    }
     private void populateTeamList() {
         // Construct the data source
         List<Team> arrayOfTeams = Team.findWithQuery(Team.class, "Select * from team ORDER BY name");

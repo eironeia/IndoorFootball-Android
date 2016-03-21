@@ -19,8 +19,6 @@
 
         <activity android:name=".AddPlayer"> </activity>
         <activity android:name=".AddTeam"></activity>
-        <activity android:name=".RemovePlayer"></activity>
-        <activity android:name=".RemoveTeam"></activity>
         <activity android:name=".ClasificationActivity"></activity>
         <activity android:name=".AddFootballGame"></activity>
         <activity android:name=".DescendTeam"></activity>

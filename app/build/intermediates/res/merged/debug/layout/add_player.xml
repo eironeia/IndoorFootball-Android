@@ -25,11 +25,25 @@
         android:layout_height="346dp"
         android:id="@+id/listOfPlayers" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add player"
-        android:id="@+id/addPlayer"
-        android:layout_gravity="center_horizontal"
-        android:onClick="onAddPlayer" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add player"
+            android:id="@+id/addPlayer"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onAddPlayer" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign a player"
+            android:id="@+id/onSignPlayer" />
+    </LinearLayout>
+
 </LinearLayout>

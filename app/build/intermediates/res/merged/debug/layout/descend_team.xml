@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinnerTeamsDescend"
         android:layout_gravity="center_horizontal"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        android:nestedScrollingEnabled="false" />
 
     <TextView
         android:layout_width="wrap_content"
